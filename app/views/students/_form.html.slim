@@ -1,0 +1,19 @@
+= form_for @student, html: { class: "form form-horizontal student" } do |f|
+  .form-group
+    = f.label :first_name, :class => 'control-label'
+    .controls
+      = f.text_field :first_name, :class => 'form-control'
+    = error_span(@student[:first_name])
+  .form-group
+    = f.label :last_name, :class => 'control-label'
+    .controls
+      = f.text_field :last_name, :class => 'form-control'
+    = error_span(@student[:last_name])
+  .form-group
+    = f.label :avatar, :class => 'control-label'
+    .controls
+      = f.text_field :avatar, :class => 'form-control'
+    = error_span(@student[:avatar])
+  = f.submit nil, :class => 'btn btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), students_path, :class => 'btn'
